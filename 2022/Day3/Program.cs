@@ -1,0 +1,2 @@
+﻿Console.WriteLine($"Part One = {File.ReadAllLines("input.txt").Select(l => (l[..(l.Length / 2)], l[(l.Length / 2)..])).Select(tuple => tuple.Item1.Intersect(tuple.Item2).Single()).Select(c => c >= 'a' ? c - 'a' + 1 : c - 'A' + 27).Sum()}");
+Console.WriteLine($"Part Two = {File.ReadAllLines("input.txt").Chunk(3).Select(g => g[0].Intersect(g[1]).Intersect(g[2]).Single()).Select(c => c >= 'a' ? c - 'a' + 1 : c - 'A' + 27).Sum()}");

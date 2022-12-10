@@ -1,0 +1,2 @@
+﻿Console.WriteLine($"Part One = {File.ReadAllLines("input.txt").Select(l => l.Split(',')).Select(p => p.Select(s => s.Split('-').Select(int.Parse).ToArray()).ToArray()).Count(p => (p[0][0] <= p[1][0] && p[0][1] >= p[1][1]) || (p[0][0] >= p[1][0] && p[0][1] <= p[1][1]))}");
+Console.WriteLine($"Part Two = {File.ReadAllLines("input.txt").Select(l => l.Split(',')).Select(p => p.Select(s => s.Split('-').Select(int.Parse).ToArray()).ToArray()).Count(p => (p[0][0] <= p[1][0] && p[0][1] >= p[1][0]) || (p[0][0] <= p[1][1] && p[0][1] >= p[1][0]))}");
