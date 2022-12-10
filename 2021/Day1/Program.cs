@@ -1,0 +1,2 @@
+﻿Console.WriteLine($"Part One = {File.ReadAllLines("input.txt").Select(int.Parse).ToList().Aggregate((0, 0), (p, m) => (m, p.Item2 + (p.Item1 < m ? 1 : 0))).Item2 - 1}");
+Console.WriteLine($"Part Two = {Enumerable.Repeat(File.ReadAllLines("input.txt").Select(int.Parse).ToList(), 3).SelectMany((m, i) => m.Skip(i).Chunk(3).Select((c, j) => (j * 3 + i, c.Sum()))).OrderBy(a => a.Item1).Aggregate((0, 0), (agg, avg) => (avg.Item2, agg.Item2 + (agg.Item1 < avg.Item2 ? 1 : 0))).Item2 - 1}");
